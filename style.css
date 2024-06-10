@@ -1,0 +1,119 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.road
+{
+    position: relative;
+}
+
+.sky{
+    height: 40%;
+    background-color: skyblue;
+}
+
+.grass{
+    height: 30%;
+    background-color: seagreen;
+}
+
+.road{
+    width: 100%;
+    height:30%;
+    background-color: dimgray;
+    box-sizing: border-box;
+    border-top: 10px solid rgb(132, 131, 131);
+    border-bottom: 10px solid rgb(132, 131, 131);
+
+}
+
+.lines
+{
+    border: 5px dashed #fff ;
+    box-sizing: border-box;
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    top: 45%;
+}
+
+.mario{
+
+position:absolute;
+top: -40px;
+left: 0;
+    height: 100px;
+    animation: mariodrive;
+    animation-duration: 3s;
+    animation-timing-function:linear;
+    /* transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68); */
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+.luigi{
+
+position:absolute;
+top: 100px;
+left: 0;
+    height: 100px;
+    animation: mariodrive;
+    animation-duration: 5s;
+    animation-timing-function:ease-in;
+    /* transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68); */
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.cloud{
+    position: absolute;
+}
+
+.cloud:nth-child(1)
+{   width: 200px;
+    top:120px;
+    opacity: 0.5;
+    animation: wind ;
+    animation-timing-function: linear;
+    animation-duration: 80s;
+     animation-iteration-count: infinite;
+    animation-direction: reverse; 
+
+}
+.cloud:nth-child(3)
+{   width: 250px;
+    top:30px;
+    opacity: 0.6;
+    animation: wind1 ;
+    animation-timing-function: linear;
+    animation-duration: 60s;
+     animation-iteration-count: infinite;
+    animation-direction: reverse; 
+    animation-fill-mode: backwards;
+
+}
+.cloud:nth-child(2)
+{   width: 300px;
+    top:0px;
+    animation: wind ;
+    animation-timing-function: linear;
+    animation-duration: 50s;
+     animation-iteration-count: infinite;
+    animation-direction: reverse; 
+}
+@keyframes wind {
+    from{left: -190px;}
+    to{left: 100%;}
+}
+@keyframes wind1 {
+    from{left: -100px;}
+    to{left: 1300px;}
+}
+
+@keyframes mariodrive {
+    from{transform: translateX(-100px);}
+    to{transform: translateX(1600px);}
+    
+}
